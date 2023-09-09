@@ -39,16 +39,16 @@ To run this project, you will need the following dependencies:
 
 1. Organize your pose data in the following directory structure:
 
-data/
-   class_1/
+  data/
+     class_1/
       -file1.npy
       -file2.npy
       ...
-   class_2/
-      file1.npy
-      file2.npy
+     class_2/
+      -file1.npy
+      -file2.npy
       ...
-   ...
+     ...
 
 2. Update the `data_dir` variable in the script to point to your data directory.
 
