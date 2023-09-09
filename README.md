@@ -4,14 +4,13 @@
 
 This project aims to classify VITpose images into different classes using machine learning techniques. VITpose images represent human poses captured through computer vision, and the goal is to create a model that can accurately classify these poses into predefined categories.
 
-![Example Pose Classification]
 
 ## Table of Contents
 - [Dependencies](#Depemdencies)
 - [Getting Started](#getting-started)
 - [Data Preparation](#data-preparation)
 - [Usage](#usage)
-- [Model Saving](#Model Saving)
+- [Model Saving](#Model-Saving)
 - [Model Details](#model-details)
 - [Results](#results)
 - [Acknowledgments](#acknowledgments)
