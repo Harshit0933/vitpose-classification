@@ -7,14 +7,16 @@ This project aims to classify VITpose images into different classes using machin
 ![Example Pose Classification]
 
 ## Table of Contents
+- [Dependencies](#Depemdencies)
 - [Getting Started](#getting-started)
 - [Data Preparation](#data-preparation)
 - [Usage](#usage)
+- [Model Saving](#Model Saving)
 - [Model Details](#model-details)
 - [Results](#results)
 - [Acknowledgments](#acknowledgments)
 - [Summary](#Summary)
-- 
+  
 ## Dependencies
 
 To run this project, you will need the following dependencies:
@@ -84,15 +86,13 @@ Test Accuracy: 1.0
 - Special thanks to TensorFlow and scikit-learn communities for their powerful libraries.
 
 ## Summary
-1. Method choice
+1. Method choice :
 The choice of Convolutional Neural Networks (CNNs) for this pose classification task was driven by their exceptional ability to handle spatial data, making them  well-suited for processing images and heatmaps. Given that the input consists of 17 key points of the body represented in a heatmap format, preserving the spatial relationships between these points is crucial for accurate pose classification. CNNs are inherently designed to capture spatial patterns, making them a natural choice.
 
-2. Limitations
-One of the primary limitations of this approach is the quality and diversity of the dataset. CNNs require substantial and diverse data to generalize effectively. A small or unrepresentative dataset can lead to overfitting, where the model performs well on the training data but poorly on new, unseen data.
+2. Limitations :
+One of the primary limitations of this approach is the quality and diversity of the dataset. CNNs require substantial and diverse data to generalize effectively. A small or unrepresentative dataset can lead to overfitting, where the model performs well on the training data but poorly on new, unseen data.Another limitation is the potential for overfitting, which can occur when the model becomes too specialized on the training data. Regularization techniques such as dropout and data augmentation were not implemented in the code, leaving the model vulnerable to overfitting, especially with limited data.
 
-Another limitation is the potential for overfitting, which can occur when the model becomes too specialized on the training data. Regularization techniques such as dropout and data augmentation were not implemented in the code, leaving the model vulnerable to overfitting, especially with limited data.
-
-3. How to improve
+3. How to improve :
 To overcome these limitations, several strategies can be implemented. Data augmentation can be used to artificially increase the dataset's size and diversity, helping the model generalize better. Transfer learning, starting with pre-trained CNN models, can leverage knowledge from existing models and adapt it to the pose classification task. Systematic hyperparameter tuning and regularization techniques, such as dropout layers, can enhance the model's generalization capabilities and mitigate overfitting.
 
 
