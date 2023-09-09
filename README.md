@@ -18,3 +18,4 @@ To run this project, you will need the following dependencies:
 
    ```bash
    git clone https://github.com/Harshit0933/vitpose-classification.git
+pip install -r requirements.txt
