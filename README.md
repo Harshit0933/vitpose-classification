@@ -1,21 +1,20 @@
 # vitpose-classification
+
 ## Introduction
 
 This project aims to classify VITpose images into different classes using machine learning techniques. VITpose images represent human poses captured through computer vision, and the goal is to create a model that can accurately classify these poses into predefined categories.
+
 ![Example Pose Classification]
+
 ## Table of Contents
 - [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
 - [Data Preparation](#data-preparation)
-  - [Dataset Structure](#dataset-structure)
-  - [Data Loading](#data-loading)
 - [Usage](#usage)
-  - [Running the Script](#running-the-script)
 - [Model Details](#model-details)
-  - [Customizing the Model](#customizing-the-model)
 - [Results](#results)
 - [Acknowledgments](#acknowledgments)
+- [Summary](#Summary)
+- 
 ## Dependencies
 
 To run this project, you will need the following dependencies:
@@ -35,8 +34,7 @@ To run this project, you will need the following dependencies:
 2. Install the required dependencies:
    pip install tensorflow numpy scikit-learn
 
-
-### Data Preparation
+## Data Preparation
 
 1. Organize your pose data in the following directory structure:
 
@@ -53,15 +51,18 @@ data/
 
 2. Update the `data_dir` variable in the script to point to your data directory.
 
-### Usage
+## Usage
 
 1. Run the script:
    ```bash
    python pose_classification.py
 
 2. The script will load and preprocess the data, train the CNN model, and evaluate its performance.
+3. Then you can run the script to prectict the unseen pose:
+    ```bash
+   prediction.py
 
-### Model Saving
+## Model Saving
 
 - The trained model will be saved as "pose_classification_model.h5" in the project directory.
 
@@ -70,10 +71,28 @@ data/
 - The CNN architecture can be customized by modifying the model definition in the script.
 - You can adjust hyperparameters, such as the number of epochs and batch size, to optimize the model for your dataset.
 
+## Results
+
+Data shape: (40553, 1, 17, 64, 48)
+Labels shape: (40553,)
+
+Test Loss: 3.737150109373033e-05
+Test Accuracy: 1.0
+
 ## Acknowledgments
 
 - Special thanks to TensorFlow and scikit-learn communities for their powerful libraries.
 
+## Summary
+1. Method choice
+The choice of Convolutional Neural Networks (CNNs) for this pose classification task was driven by their exceptional ability to handle spatial data, making them  well-suited for processing images and heatmaps. Given that the input consists of 17 key points of the body represented in a heatmap format, preserving the spatial relationships between these points is crucial for accurate pose classification. CNNs are inherently designed to capture spatial patterns, making them a natural choice.
 
+2. Limitations
+One of the primary limitations of this approach is the quality and diversity of the dataset. CNNs require substantial and diverse data to generalize effectively. A small or unrepresentative dataset can lead to overfitting, where the model performs well on the training data but poorly on new, unseen data.
+
+Another limitation is the potential for overfitting, which can occur when the model becomes too specialized on the training data. Regularization techniques such as dropout and data augmentation were not implemented in the code, leaving the model vulnerable to overfitting, especially with limited data.
+
+3. How to improve
+To overcome these limitations, several strategies can be implemented. Data augmentation can be used to artificially increase the dataset's size and diversity, helping the model generalize better. Transfer learning, starting with pre-trained CNN models, can leverage knowledge from existing models and adapt it to the pose classification task. Systematic hyperparameter tuning and regularization techniques, such as dropout layers, can enhance the model's generalization capabilities and mitigate overfitting.
 
 
