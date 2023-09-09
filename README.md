@@ -15,7 +15,6 @@ This project aims to classify VITpose images into different classes using machin
 - [Model Details](#model-details)
   - [Customizing the Model](#customizing-the-model)
 - [Results](#results)
-- [License](#license)
 - [Acknowledgments](#acknowledgments)
 ## Dependencies
 
